@@ -1,0 +1,49 @@
+Window : 현재 스크립트가 작동 중인 창을 나타내는 객체입니다. 
+mouseenter : 마우스가 위로 올라갔을 때 발생하는 이벤트입니다. 
+mouseleave : 마우스가 떠났을 때 발생하는 이벤트입니다. 
+contextmenu : 사용자가 요소를 마우스 우 클릭해 메뉴를 열 때 발생하는 이벤트입니다. 
+resize : 브라우저 창의 사이즈가 변할 때 발생하는 이벤트입니다. 
+
+// <⚠️ DONT DELETE THIS ⚠️>
+import './styles.css';
+const colors = ['#1abc9c', '#3498db', '#9b59b6', '#f39c12', '#e74c3c'];
+// <⚠️ /DONT DELETE THIS ⚠️>
+
+/*
+✅ The text of the title should change when the mouse is on top of it.
+✅ The text of the title should change when the mouse is leaves it.
+✅ When the window is resized the title should change.
+✅ On right click the title should also change.
+✅ The colors of the title should come from a color from the colors array.
+✅ DO NOT CHANGE .css, or .html files.
+✅ ALL function handlers should be INSIDE of "superEventHandler"
+*/
+const title = document.querySelector('h2');
+const superEventHandler = {
+  onMouse: function () {
+    title.innerText = 'The mouse is here!';
+    title.style.color = colors[0];
+  },
+
+  leaveMouse: function () {
+    title.innerText = 'The mouse is gone!';
+    title.style.color = colors[1];
+  },
+
+  changeSize: function () {
+    title.innerText = 'You just resized!';
+    title.style.color = colors[2];
+  },
+
+  rightClick: function (event) { // 우클릭의 경우 contextmenu 이벤트를 통해서도 수정 가능
+    if (event.button == 2) {
+      title.innerText = 'That was a right click!';
+      title.style.color = colors[4];
+    }
+  },
+};
+
+title.addEventListener('mouseenter', superEventHandler.onMouse);
+title.addEventListener('mouseleave', superEventHandler.leaveMouse);
+window.addEventListener('resize', superEventHandler.changeSize); // 창에서 변화가 발생하는 경우는 winodw 객체를 이용해서 수정
+window.addEventListener('mousedown', superEventHandler.rightClick);
