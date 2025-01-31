@@ -1,0 +1,23 @@
+const body = document.querySelector('body');
+const title = document.createElement('h2');
+
+body.append(title);
+
+title.innerText = 'Hello!'; // 1. body안에 'Hello'를 나타내기 위한 h1 태그를 추가
+title.style.color = '#fff';
+
+function resize() { 2. if,else 구문과 classList를 활용해서 창 크기 변환에 따른 배경색 변화 구현
+  const width = window.innerWidth;
+  body.classList.remove('active1', 'active2', 'active3');
+
+  if (width <= 500) {
+    body.classList.add('active1');
+  } else if (width <= 800) {
+    body.classList.add('active3');
+  } else {
+    body.classList.add('active2');
+  }
+}
+
+resize();
+window.addEventListener('resize', resize);
