@@ -1,0 +1,9 @@
+.active1 {
+  background-color: #3498db;
+}
+.active2 {
+  background-color: #f39c12;
+}
+.active3 {
+  background-color: #9b59b6;
+}
