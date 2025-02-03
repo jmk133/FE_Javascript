@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <h1>Random Number Game</h1>
+  <div style="display: flex; align-items: center">
+  <h2>Generate a number between 0 and &nbsp; <span id ="maximum"></h2>
+    <form id="generate-form">
+      <input id="range" type="number" min="0" placeholder="Write the maximum" style="height: 30px" />
+    </form>
+  </div>
+  <p style="display: flex; align-items: center">
+  <h4> Guess the number:&nbsp;</h4>
+    <form id="play-form">
+      <input id ="number" type="number" min="0">
+      <button>play!</button>
+    </form>
+  </p>
+  <h4 id="choice"></h4>
+  <h3 id="result"></h3>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
