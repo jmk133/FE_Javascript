@@ -35,3 +35,5 @@ function handleInput(event) {
 
 range.addEventListener('input', handleInput);
 playForm.addEventListener('submit', generateNum);
+
+1. localStorage에서 가져온 값은 문자열이므로 parseInt로 바꾸어 주어야 한다.
