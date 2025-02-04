@@ -7,9 +7,10 @@ const choice = document.querySelector('#choice');
 const result = document.querySelector('#result');
 
 //숫자 비교 및 결과 출력
-function showresult(temp, randomNum) {
-  choice.innerText = `You chose: ${temp}, the machince chose ${randomNum}.`;
-  if (parseInt(temp) === randomNum) {
+function showresult(temp) {
+  const answer = localStorage.getItem('randomNum');
+  choice.innerText = `You chose: ${temp}, the machince chose ${answer}.`;
+  if (parseInt(temp) === answer) {
     result.innerText = 'You won!';
   } else {
     result.innerText = 'You lost!';
@@ -22,7 +23,8 @@ function generateNum(event) {
   const temp = inputNum.value;
   const rangeNum = range.value;
   const randomNum = Math.ceil(Math.random() * rangeNum);
-  showresult(temp, randomNum);
+  localStorage.setItem('randomNum', randomNum);
+  showresult(temp);
 }
 
 //최댓값 입력받기
