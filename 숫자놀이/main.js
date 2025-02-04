@@ -8,7 +8,7 @@ const result = document.querySelector('#result');
 
 //숫자 비교 및 결과 출력
 function showresult(temp) {
-  const answer = localStorage.getItem('randomNum');
+  const answer = parseInt(localStorage.getItem('randomNum'));
   choice.innerText = `You chose: ${temp}, the machince chose ${answer}.`;
   if (parseInt(temp) === answer) {
     result.innerText = 'You won!';
