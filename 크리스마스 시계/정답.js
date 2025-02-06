@@ -4,7 +4,7 @@ function getTime() {
   const xmasDay = new Date(`${new Date().getFullYear()}-12-25:00:00:00+0900`);
   const now = new Date();
   // This is in milisecondsx
-  const difference = new Date(xmasDay - now);
+  const difference = new Date(xmasDay - now); // Date 함수로 생성한 Date 객체는 연산이 가능합니다. 즉 xmasDay와 now를 연산할 수 있습니다.
   const secondsInMs = Math.floor(difference / 1000);
   const minutesInMs = Math.floor(secondsInMs / 60);
   const hoursInMs = Math.floor(minutesInMs / 60);
