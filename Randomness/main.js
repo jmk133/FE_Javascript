@@ -31,3 +31,5 @@ button.addEventListener('click', handleColor);
 
 1. javascript로 css를 조작하는 가장 기본적인 방법: style을 이용한다.
   element.style.propertyName으로 적용할 수 있다.
+
+  https://chan-co.tistory.com/46
